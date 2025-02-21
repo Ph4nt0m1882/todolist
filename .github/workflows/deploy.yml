@@ -8,7 +8,11 @@ on:
 
 jobs:
 
+<<<<<<< Updated upstream
   # Deuxième job: déploiement
+=======
+  # Troisième job: déploiement
+>>>>>>> Stashed changes
   deploy:
     runs-on: ubuntu-latest
 
@@ -39,6 +43,7 @@ jobs:
         run: |
           npm install -g vercel
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           vercel --prod --token $VERCEL_TOKEN --yes
 
 # Troisième job: Scan qualité par SonarCloud
@@ -65,6 +70,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           npx sonarqube-scanner
+=======
+          vercel --prod --token $VERCEL_TOKEN --yes
+>>>>>>> Stashed changes
 =======
           vercel --prod --token $VERCEL_TOKEN --yes
 >>>>>>> Stashed changes
