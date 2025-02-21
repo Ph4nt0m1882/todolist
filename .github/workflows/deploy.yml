@@ -7,12 +7,7 @@ on:
       - main # Déclenchement sur la branche principale (main)
 
 jobs:
-
-<<<<<<< Updated upstream
   # Deuxième job: déploiement
-=======
-  # Troisième job: déploiement
->>>>>>> Stashed changes
   deploy:
     runs-on: ubuntu-latest
 
@@ -42,37 +37,4 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           npm install -g vercel
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
           vercel --prod --token $VERCEL_TOKEN --yes
-
-# Troisième job: Scan qualité par SonarCloud
-  sonarcloud:
-    # Scan
-    name: SonarCloud Scan
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Nécessaire pour une analyse correcte
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-
-      - name: Run SonarCloud Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          npx sonarqube-scanner
-=======
-          vercel --prod --token $VERCEL_TOKEN --yes
->>>>>>> Stashed changes
-=======
-          vercel --prod --token $VERCEL_TOKEN --yes
->>>>>>> Stashed changes
